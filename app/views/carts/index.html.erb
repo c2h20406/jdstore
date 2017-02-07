@@ -10,25 +10,25 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% current_cart.cart_items.each do |catr_item| %>
+				<% current_cart.cart_items.each do |cart_item| %>
 				<tr>
 					<td>
-						<%= link_to product_path(catr_item.product) do %>
-						<% if catr_item.product.image.present? %>
-						<%= image_tag(catr_item.product.image.thumb.url, class: "thumbnail")%>
+						<%= link_to product_path(cart_item.product) do %>
+						<% if cart_item.product.image.present? %>
+						<%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail")%>
 						<% else %>
 						<%= image_tag("http://placehold.it/200x200&text=No Pic",class: "thumbnail")%>
 						<% end %>
 						<% end %>
 					</td>
 					<td>
-						<%= link_to(catr_item.product.title, product_path(catr_item.product))%>
+						<%= link_to(cart_item.product.title, product_path(cart_item.product))%>
 					</td>
 					<td>
-						<%= catr_item.product.price %>
+						<%= cart_item.product.price %>
 					</td>
 					<td>
-						<%= catr_item.quantity %>
+						<%= cart_item.quantity %>
 					</td>
 				</tr>
 				<% end %>
@@ -38,7 +38,9 @@
 	<br>
 	<div class="total clearfix">
 		<span class="pull-right">
-			<span>总计xxxRMB</span>
+			<span>
+				总计<%= render_cart_total_price(current_cart) %>RMB
+			</span>
 		</span>
 	</div>
 	<hr>
