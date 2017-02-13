@@ -402,7 +402,26 @@
     margin: -15px;
 }
 
+
+a.call {
+    background-color: #F6AB4A;
+    color: white;
+    
+}
+a.call:hover {
+    background-color: #e89831;
+}
+
 /* introduction */
 .introduction {
     background-image:url(http://pets-grooming.axiomthemes.com/wp-content/uploads/2016/07/background-6.jpg?id=211);
+    color:white;
+    width:100%;
+    height:auto;
+}
+.introduction a {
+    color:white;
+}
+.introduction a:hover {
+    color:#F6AB4A;
 }
